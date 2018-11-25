@@ -22,13 +22,14 @@
     background-image: linear-gradient(120deg, #8240bf 0%, #8ec5fc 100%);
   }
 
+
+
   
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "daria bartosz kamil jerzy"
-    
   }
   
   .item--1 {

@@ -1,0 +1,52 @@
+.container--cards {
+    background-color: #f2f2f2;
+    min-height: 10rem;
+  }
+
+  .card {
+    height: 100%;
+    font-size: 5rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all .2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  
+.card--1 {
+    background-image: linear-gradient(120deg, #8240bf 0%, #8ec5fc 100%);
+  }
+
+  
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "daria bartosz kamil jerzy"
+    
+  }
+  
+  .item--1 {
+  grid-area: daria;
+  padding: .5em;
+  }
+  
+  .item--2 {
+    grid-area: bartosz;
+    padding: .5em;
+    }
+  
+    .item--3 {
+      grid-area: kamil;
+      padding: .5em;
+      }
+  
+      .item--4 {
+        grid-area: jerzy;
+        padding: .5em;
+        }

@@ -10,5 +10,5 @@ html {
 
 .nav {
   display: flex;
-  background-image: url(img/hero.jpg);
+  background-image: url(../img/hero.jpg);
 }

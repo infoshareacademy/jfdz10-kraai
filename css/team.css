@@ -1,6 +1,8 @@
+
 .container--cards {
-    background-color: #f2f2f2;
+    background-color: #eecccc;
     min-height: 5rem;
+    padding: 20px;
   }
 
   .card {
@@ -8,20 +10,29 @@
     font-size: 5rem;
     padding: 1rem;
     text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 2px;
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
     transition: all .2s;
+    
   }
 
-  .card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
+  /* .card:hover { */
+    /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
+  /* } */
 
   
 .card--1 {
+    background-image: linear-gradient(120deg, #f9f8fa 0%, #f3f3f5 100%);
+  }
+  .card--2 {
     background-image: linear-gradient(120deg, #8240bf 0%, #8ec5fc 100%);
   }
-
+  .card--3 {
+    background-image: linear-gradient(120deg, #8240bf 0%, #8ec5fc 100%);
+  }
+  .card--4 {
+    background-image: linear-gradient(120deg, #8240bf 0%, #8ec5fc 100%);
+  }
   
 .container {
     display: grid;
@@ -50,3 +61,17 @@
         grid-area: jerzy;
         padding: .5em;
         }
+
+
+    
+
+.name {
+  font-size: 1rem;
+}
+
+.quote {
+  width: 30%;
+  font-size: 1.5rem;
+  
+}
+

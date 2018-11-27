@@ -14,7 +14,7 @@
   .card {
     height: 100%;
     font-size: 5rem;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 2px;
     /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
     transition: all .2s;
@@ -59,18 +59,28 @@
         padding: .5em;
         }
 
+
 h2.name {
-  font-size: 2rem;
+  font-size: 4rem;
   text-transform: uppercase;
   text-align: left;
   padding: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 5px;
 }
 
 .quote {
+  font-style: italic;
   padding: 0.9rem;
   width: 60%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: left;
+}
+
+p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 ul {
@@ -93,3 +103,9 @@ ul {
 }
 
 
+
+.logo {
+  width:50px; /*width of your image*/
+  height:50px; /*height of your image*/
+  font-weight: bold;
+}

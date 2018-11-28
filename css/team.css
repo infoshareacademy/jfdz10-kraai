@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns:80px 1fr 1fr 1fr 1fr 80px;
+  grid-template-columns:40px 1fr 1fr 1fr 1fr 40px;
   grid-template-rows: 1fr;
   grid-template-areas: ". daria jakub kamil jerzy ."
   
@@ -29,12 +29,14 @@
   }
   .card--4 {
     background-image: linear-gradient(120deg, #f9f8fa 0%, #f3f3f5 100%);
+  
   }
 
   .item--1 {
   grid-area: daria;
   padding: .5em;
   min-width: 200px;
+  
   }
   
   .item--2 {
@@ -53,10 +55,14 @@
         grid-area: jerzy;
         padding: .5em;
         min-width: 200px;
+       
         }
 
 
 h2.name {
+  white-space:nowrap;
+  height: 100px;
+  min-height: 150px;
   font-size: 4rem;
   text-transform: uppercase;
   text-align: left;
@@ -64,6 +70,23 @@ h2.name {
   font-weight: bold;
   letter-spacing: 5px;
   word-wrap: break-word;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2.name2 {
+  white-space:nowrap;
+  height: 100px;
+  min-height: 150px;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  word-wrap: break-word;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 h2. :after {
@@ -103,30 +126,67 @@ ul {
   float: left;
 }
 
+.head {
+  width:120px; 
+  height:120px;
+}
+
 .logo {
+  float: right;
   width:50px; 
   height:50px;
-  font-weight: bold;
 }
 
 
 
 
 
-@media only screen and (max-width: 1350px) {
+
+/* stylowa dla reszty */
+@media only screen and (max-width: 1022px) {
 h2.name {
     font-size: 17px;
+    min-height: 80px;
   }
 }
 
+/* specjalna stylowa dla darii */
+@media only screen and (max-width: 1222px) {    
+  h2.name2 {
+    white-space: nowrap; 
+    width: 224px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    }
+  }
 
-@media only screen and (max-width: 1350px) {
+  @media only screen and (max-width: 1125px) {    
+    h2.name2 {
+      white-space: nowrap; 
+      width: 200px; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      }
+    }
+
+    @media only screen and (max-width: 1022px) {
+      h2.name2 {
+          font-size: 17px;
+          min-height: 80px;
+        }
+      }
+
+
+      /* dziekuje */
+
+
+@media only screen and (max-width: 1022px) {
   .quote {
       font-size: 11px;
     }
   }
 
-  @media only screen and (max-width: 996px) {
+  @media only screen and (max-width: 1022px) {
     .quote {
         display: none;
       }

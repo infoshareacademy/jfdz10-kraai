@@ -8,6 +8,10 @@ html {
   font-size: 10px;
 }
 
+body {
+  overflow: hidden;
+}
+
 .hero {
   display: flex;
   height: 100vh;
@@ -25,7 +29,7 @@ html {
   display: flex;
   width: 100%;
   height: 100%;
-  background-color: rgba(239, 197, 202, 0.5);
+  background-color: rgba(32, 62, 74, 0.5);
 }
 
 .hero__img {
@@ -44,10 +48,11 @@ html {
   width: 65vw;
   flex-direction: column;
   align-items: center;
+  align-self: center;
 }
 
 .tittle1 {
-  color: white;
+  color: #cf9c63;
   font-size: 7rem;
   text-align: center;
   letter-spacing: 0.5rem;
@@ -56,7 +61,7 @@ html {
 }
 
 .tittle2 {
-  color: white;
+  color: #1b1b1b;
   font-size: 4rem;
   text-align: center;
   letter-spacing: 0.5rem;
@@ -64,21 +69,19 @@ html {
   padding: 1rem 0 6rem;
 }
 
-.cta {
-}
-
 .cta__link {
-  color: white;
+  color: #cf9c63;
+  font-weight: bold;
   font-size: 3rem;
   text-decoration: none;
   text-transform: uppercase;
-  border: 2px solid white;
+  border: 2px solid #cf9c63;
   padding: 1rem 3rem;
   margin: 2rem 0;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .cta__link:hover {
-  color: black;
-  background-color: #fff;
+  color: #1b1b1b;
+  background-color: #cf9c63;
 }

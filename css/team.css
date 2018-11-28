@@ -63,6 +63,10 @@ h2.name {
   padding: 0.9rem;
   font-weight: bold;
   letter-spacing: 5px;
+  word-wrap: break-word;
+}
+
+h2. :after {
   
 }
 
@@ -121,3 +125,10 @@ h2.name {
       font-size: 11px;
     }
   }
+
+  @media only screen and (max-width: 996px) {
+    .quote {
+        display: none;
+      }
+    }
+  

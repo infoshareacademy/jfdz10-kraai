@@ -1,13 +1,13 @@
 .container {
   display: grid;
-  grid-template-columns:40px 1fr 1fr 1fr 1fr 40px;
+  grid-template-columns:100px 1fr 1fr 1fr 1fr 100px;
   grid-template-rows: 1fr;
   grid-template-areas: ". daria jakub kamil jerzy ."
   
 }
 
 .container--cards {
-    background-color: #eecccc;
+    background-color: #f5eeee;
     padding: 20px;
   }
 
@@ -15,20 +15,21 @@
     height: 100%;
     font-size: 5rem;
     padding: 2rem;
-    border-radius: 2px;
+    border-radius: 20px 2px 20px 2px;
+    max-width: 300px;
   }
 
 .card--1  {
-    background-image: linear-gradient(120deg, #f9f8fa 0%, #f3f3f5 100%);
+    background-image: linear-gradient(120deg, #ffffff 0%, #fbfbfb 100%);
   }
   .card--2 {
-    background-image: linear-gradient(120deg, #f9f8fa 0%, #f3f3f5 100%);
+    background-image: linear-gradient(120deg, #ffffff 0%, #fbfbfb 100%);
   }
   .card--3 {
-    background-image: linear-gradient(120deg, #f9f8fa 0%, #f3f3f5 100%);
+    background-image: linear-gradient(120deg, #ffffff 0%, #fbfbfb 100%);
   }
   .card--4 {
-    background-image: linear-gradient(120deg, #f9f8fa 0%, #f3f3f5 100%);
+    background-image: linear-gradient(120deg, #ffffff 0%, #fbfbfb 100%);
   
   }
 
@@ -60,6 +61,7 @@
 
 
 h2.name {
+  color: #171717;
   white-space:nowrap;
   height: 100px;
   min-height: 150px;
@@ -68,13 +70,14 @@ h2.name {
   text-align: left;
   padding: 0.9rem;
   font-weight: bold;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   word-wrap: break-word;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 h2.name2 {
+  color: #171717;
   white-space:nowrap;
   height: 100px;
   min-height: 150px;
@@ -83,9 +86,9 @@ h2.name2 {
   text-align: left;
   padding: 0.9rem;
   font-weight: bold;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   word-wrap: break-word;
-  margin-top: 1rem;
+    margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -94,6 +97,7 @@ h2. :after {
 }
 
 .quote {
+  color: #171717;
   font-style: italic;
   padding: 0.9rem;
   width: 60%;
@@ -137,10 +141,49 @@ ul {
   height:50px;
 }
 
+/* OVERLAY START */
+.container {
+  position: relative;
+}
 
+.overlay {
+  height: 100%;
+  font-size: 5rem;
+  padding: 2rem;
+  border-radius: 20px 2px 20px 2px;
+  max-width: 300px;
+  grid-area: daria;
+  min-width: 200px;
+  position: absolute;
+  top: 5px;
+  bottom: 0px;
+  left: 5px;
+  right: 0;
+  height: 98%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgb(29, 133, 167);
+}
 
+.card:hover .overlay {
+  opacity: 0.5;
+}
 
+.textoverlay {
+  color: white;
+  font-size: 1.1em;
+  position: relative;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+}
 
+/* OVERLAY END */
 
 /* stylowa dla reszty */
 @media only screen and (max-width: 1022px) {
@@ -180,15 +223,17 @@ h2.name {
       /* dziekuje */
 
 
-@media only screen and (max-width: 1022px) {
-  .quote {
-      font-size: 11px;
-    }
-  }
+
 
   @media only screen and (max-width: 1022px) {
     .quote {
         display: none;
       }
     }
+
+    @media only screen and (max-width: 1136px) {
+      .logo {
+          display: none;
+        }
+      }
   

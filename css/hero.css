@@ -15,6 +15,8 @@ html {
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(315deg, #58646d 36%, #097988 100%);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .hero__text {
@@ -30,11 +32,13 @@ html {
   font-size: 3rem;
   text-align: center;
   letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
 
 .tittle2 {
   color: #1b1b1b;
   font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
 .cta {
@@ -90,4 +94,13 @@ html {
 }
 
 @media (min-width: 1024px) {
+  .tittle1 {
+    font-size: 6rem;
+  }
+  .tittle2 {
+    font-size: 4.5rem;
+  }
+  .cta__link {
+    font-size: 4.5rem;
+  }
 }

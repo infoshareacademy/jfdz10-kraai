@@ -8,80 +8,86 @@ html {
   font-size: 10px;
 }
 
-body {
-  overflow: hidden;
-}
-
 .hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 100vw;
   height: 100vh;
-  max-width: 100vw;
-  background-image: url(../img/pattern.png);
-  justify-content: center;
-  align-items: center;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.hero__rgb {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(32, 62, 74, 0.5);
-}
-
-.hero__img {
-  width: auto;
-  height: 100%;
-  order: 1;
-}
-
-.hero__img > .img {
-  width: auto;
-  height: 100%;
+  background-image: linear-gradient(315deg, #58646d 36%, #097988 100%);
 }
 
 .hero__text {
   display: flex;
-  width: 65vw;
+  grid-area: 2 / 2 / 3 / 5;
   flex-direction: column;
   align-items: center;
-  align-self: center;
+  justify-content: space-evenly;
 }
 
 .tittle1 {
   color: #cf9c63;
-  font-size: 7rem;
+  font-size: 3rem;
   text-align: center;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  padding: 1rem 3rem 2rem;
+  letter-spacing: 0.2rem;
 }
 
 .tittle2 {
   color: #1b1b1b;
-  font-size: 4rem;
-  text-align: center;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  padding: 1rem 0 6rem;
+  font-size: 2.5rem;
+}
+
+.cta {
+  display: flex;
+  grid-area: 3 / 2 / 4 / 5;
+  justify-content: center;
+  align-items: center;
 }
 
 .cta__link {
   color: #cf9c63;
-  font-weight: bold;
-  font-size: 3rem;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
   border: 2px solid #cf9c63;
-  padding: 1rem 3rem;
-  margin: 2rem 0;
-  transition: 0.5s;
+  padding: 1rem 2rem;
+  transition: 0.3s;
 }
 
 .cta__link:hover {
   color: #1b1b1b;
   background-color: #cf9c63;
+}
+
+.hero__img {
+  width: 90%;
+  height: auto;
+  grid-area: 4 / 1 / 7 / 6;
+  align-self: flex-end;
+  justify-self: end;
+}
+
+.img {
+  width: 90%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .tittle1 {
+    font-size: 4rem;
+  }
+  .tittle2 {
+    font-size: 3.5rem;
+  }
+  .cta__link {
+    font-size: 3.5rem;
+  }
+  .hero__img {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
 }

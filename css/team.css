@@ -7,8 +7,15 @@
 }
 
 .container--cards {
-    background-color: #f5eeee;
-    padding: 20px;
+  background-image: url("../pug-801826_1920.jpg");
+}
+
+
+.container--cards {
+    /* background-color: #f5eeee; */
+
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 
   .card {
@@ -142,9 +149,10 @@ ul {
 }
 
 /* OVERLAY START */
-.container {
+.item {
   position: relative;
 }
+
 
 .overlay {
   height: 100%;
@@ -163,25 +171,18 @@ ul {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: rgb(29, 133, 167);
+  background-image: linear-gradient(120deg, #FFA727 0%, #F94243 100%);
 }
 
-.card:hover .overlay {
-  opacity: 0.5;
+
+
+.card--1:hover .overlay {
+  opacity: 0.9;
 }
 
-.textoverlay {
-  color: white;
-  font-size: 1.1em;
-  position: relative;
-  top: 45%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-  text-transform: uppercase;
-}
+
+
+
 
 /* OVERLAY END */
 
@@ -221,8 +222,6 @@ h2.name {
 
 
       /* dziekuje */
-
-
 
 
   @media only screen and (max-width: 1022px) {

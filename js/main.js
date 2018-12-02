@@ -10,10 +10,8 @@ var horizontalLogo = document.querySelector('.nav-logo__img2');
 var navTrigger = document.querySelector('.nav__trigger');
 var menu = document.querySelector('.nav-menu');
 var triggerIcon = navTrigger.querySelector('.nav i');
-var scrollOffsetTop = window.scrollY;
-var actualScroll;
-var initScroll = window.scrollY;
 var allSections = document.querySelectorAll('section');
+var scrollOffsetTop = window.scrollY;
 var scrollThreshold = 20;
 
 function setScrollPosition() {
@@ -54,12 +52,7 @@ function toggleNavbarVisibility() {
 
 function checkActiveSection() {
     for (var i = 0; i < allSections.length; i++) {
-        var sectionHeight = allSections[i].offsetHeight;
         var sectionTop = allSections[i].offsetTop;
-        var sectionBottom = sectionTop + sectionHeight;
-        var viewportTop = scrollOffsetTop;
-        var windowHeight = window.innerHeight;
-        var viewportBottom = scrollOffsetTop + windowHeight;
         var allLinks = document.querySelectorAll('.nav-menu__link');
         var activeLink = document.querySelector('.nav-menu__link--active');
        
@@ -69,20 +62,6 @@ function checkActiveSection() {
         }
     }
 
-}
-
-function scrollDirection() {
-    actualScroll = window.scrollY;
-    if (actualScroll >= initScroll) {
-        initScroll = actualScroll;
-        console.log('down');
-        return 'down';
-
-    } else if (actualScroll <= initScroll) {
-        initScroll = actualScroll;
-        console.log('up');
-        return 'up';
-    }
 }
 
 document.addEventListener('scroll', setScrollPosition);

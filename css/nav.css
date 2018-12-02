@@ -90,13 +90,6 @@
   text-decoration-style: double;
 }
 
-section {
-  width: 100%;
-  height: 100vh;
-  background-color: #097988;
-  border: solid 3px red;
-}
-
 @media (min-width: 768px) {
   .nav__trigger {
     display: none;

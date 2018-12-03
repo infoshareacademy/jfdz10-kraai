@@ -53,7 +53,11 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .features__paragraph {
+    .features__icon{
+        width: 20%;
+    }
+  
+    .features__paragraph {
     font-size: 1.2rem;
   }
 }

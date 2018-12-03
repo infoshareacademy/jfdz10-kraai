@@ -35,14 +35,14 @@ body {
   align-items: center;
   width: 300px;
   height: auto;
-  background-color: white;
+  background-color: #24727f;
   border: 1px solid #57646d;
   border-radius: 5px;
   box-shadow: 0px 3px 20px 0px black;
 }
 
 .features__item:hover {
-  background-color: #1e9bae;
+  background-color: #d49c63;
   transition: 0.3s;
 }
 

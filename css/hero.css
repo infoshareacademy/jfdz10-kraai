@@ -14,7 +14,7 @@ html {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   max-width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(315deg, #58646d 36%, #097988 100%);
+  background-image: linear-gradient(315deg, #cf9c63 4%, #203e4a 103%, #58646d 60%, #097988 78%);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;

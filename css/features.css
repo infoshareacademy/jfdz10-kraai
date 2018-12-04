@@ -31,32 +31,34 @@ body {
   margin: 2rem;
   margin-top: 5rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  float: right;
   width: 300px;
   height: auto;
-  background-color: #24727f;
+  background-color: #d49c63;
   border: 1px solid #57646d;
   border-radius: 5px;
   box-shadow: 0px 3px 20px 0px black;
 }
 
 .features__item:hover {
-  background-color: #d49c63;
+  background-color: #f0e9e3;
   transition: 0.3s;
 }
 
 .features__icon {
-  float: left;
+  align-self: flex-start;
   margin: 10px;
+  
 }
 
 .features__paragraph {
-  float: right;
   color: black;
   font-size: 1.5rem;
   text-align: center;
-  margin: 2rem;
+  padding-left: 1rem;
+
 }
 
 @media screen and (max-width: 768px) {

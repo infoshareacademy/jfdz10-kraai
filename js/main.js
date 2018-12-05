@@ -56,7 +56,7 @@ function checkActiveSection() {
         var allLinks = document.querySelectorAll('.nav-menu__link');
         var activeLink = document.querySelector('.nav-menu__link--active');
        
-        if (sectionTop <= scrollOffsetTop) {
+        if (sectionTop <= scrollOffsetTop + 200) {
             activeLink.classList.remove('nav-menu__link--active');
             allLinks[i].classList.add('nav-menu__link--active');
         }

@@ -199,14 +199,16 @@
     <section class="more" id="more"></section>
     <span class="separator"></span>
     <section class="form" id="form">
+      <form>
       <h3 class="tittle3">Bądź pierwszy! Zapisz się na premierę.</h3>
       <span class="form__tittle">Imię</span>
-      <input type="text" class="form__name form__field" name="firstname" />
+      <input type="text" class="form__name form__field" name="firstname" pattern="[A-Za-z]{1,20}" title="Tylko małe i duże litery. Maksymalnie 20 znaków" />
       <span class="form__tittle">Nazwisko</span>
-      <input type="text" class="form__surname form__field" name="lastname" />
+      <input type="text" class="form__surname form__field" name="lastname" pattern="[A-Za-z]{1,20}" title="Tylko małe i duże litery. Maksymalnie 20 znaków"/>
       <span class="form__tittle">E-mail</span>
-      <input type="email" class="form__mail form__field" />
-      <input type="submit" class="form__submit" />
+      <input type="email" class="form__mail form__field" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+      <input type="submit" value="Submit" class="form__submit" />
+    </form>
     </section>
     <span class="separator"></span>
     <footer class="footer">

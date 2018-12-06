@@ -40,16 +40,16 @@ body {
   border: 1px solid #57646d;
   border-radius: 5px;
   box-shadow: 0px 3px 20px 0px black;
+  transition: 0.3 linear;
 }
 
 .features__item:hover {
   background-color: #f0e9e3;
-  transition: 0.3s;
+  transition: 0.4s linear;
 }
 
 .features__icon {
   margin: 10px;
-
 }
 
 .features__paragraph {

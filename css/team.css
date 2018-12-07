@@ -245,6 +245,13 @@
         width: 200px;
       }
     }
-
+    @media only screen and (max-width: 455px) {
+      .container-team {
+        grid-template-columns:10% 1fr 10%;
+        grid-template-rows: 1fr;
+        grid-template-areas: ". daria ." ". jakub ." ". kamil ." ". jerzy .";
+        justify-items: center;
+      }
+      }
       
   

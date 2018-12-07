@@ -68,3 +68,18 @@
   background-color: #203e4a;
   color: #1b1b1b;
 }
+
+#form__popup {
+  margin-top: 3rem;
+  width: 60vw;
+  height: 15vh;
+  background-color: white;
+  opacity: 0.75;
+  border: 1px solid black;
+}
+
+#form__popup p{
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}

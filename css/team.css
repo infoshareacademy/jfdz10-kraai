@@ -240,5 +240,11 @@
       }
     }
 
+    @media only screen and (max-width: 900px) {
+      .item-team {
+        width: 200px;
+      }
+    }
+
       
   

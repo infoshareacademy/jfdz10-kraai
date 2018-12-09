@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #58646d;
+  background-color: #989b9e;
   color: #203e4a;
 }
 .form form{
@@ -24,23 +24,23 @@
 }
 
 .form__tittle {
-  text-align: left;
+  text-align: center;
   width: 30%;
   font-size: 2.5rem;
   font-weight: bold;
 }
 .form__field {
   height: 10%;
-  width: 30%;
+  width: 50%;
   margin: 2rem;
   font-size: 2.8rem;
-  border: 4px solid #1b1b1b;
-  background-color: #58646d;
+  border: 2px solid #1b1b1b;
+  background-color: #989b9e;
   box-shadow: 2px 2px 20px #000;
   color: white;
 }
 .form__field:focus {
-  border: 4px solid #203e4a;
+  border: 2px solid #203e4a;
   box-shadow: 4px 4px 30px #000;
   outline-color: #203e4a;
 }

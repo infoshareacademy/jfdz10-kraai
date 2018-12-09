@@ -12,7 +12,7 @@ body {
 }
 
 .features__container {
-  background-color: black;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;

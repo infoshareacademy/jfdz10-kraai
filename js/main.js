@@ -3,6 +3,7 @@ var cssSelectors = {
     NAV: '.nav',
     NAV_MENU: '.nav-menu',
     NAV_TRIGGER: '.nav_trigger',
+    GO_UP: '.goUp',
 }
 var navigationBar = document.querySelector(cssSelectors.NAV);
 var verticalLogo = document.querySelector('.nav-logo__img1');
@@ -11,8 +12,11 @@ var navTrigger = document.querySelector('.nav__trigger');
 var menu = document.querySelector('.nav-menu');
 var triggerIcon = navTrigger.querySelector('.nav i');
 var allSections = document.querySelectorAll('section');
+var goUpButton = document.querySelector(cssSelectors.GO_UP);
 var scrollOffsetTop = window.scrollY;
 var scrollThreshold = 20;
+var goUpButtonThreshold = 300;
+
 
 function setScrollPosition() {
     scrollOffsetTop = window.scrollY;
@@ -56,7 +60,7 @@ function checkActiveSection() {
         var allLinks = document.querySelectorAll('.nav-menu__link');
         var activeLink = document.querySelector('.nav-menu__link--active');
        
-        if (sectionTop <= scrollOffsetTop) {
+        if (sectionTop <= scrollOffsetTop + 200) {
             activeLink.classList.remove('nav-menu__link--active');
             allLinks[i].classList.add('nav-menu__link--active');
         }
@@ -64,6 +68,15 @@ function checkActiveSection() {
 
 }
 
+function toggleGoUpButtonVisibility(){
+    if (scrollOffsetTop > goUpButtonThreshold) {
+        goUpButton.classList.add('goUp--show');
+    } else {
+        goUpButton.classList.remove('goUp--show');
+        }
+    }
+
+document.addEventListener('scroll', toggleGoUpButtonVisibility);
 document.addEventListener('scroll', setScrollPosition);
 document.addEventListener('scroll', toggleNavbarClasses);
 document.addEventListener('scroll', checkActiveSection);

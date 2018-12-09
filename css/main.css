@@ -8,9 +8,34 @@ body {
   font-size: 10px;
   font-family: "Lato", sans-serif;
   scroll-behavior: smooth;
+  background-color: #58646d;
 }
 h1,
 h2,
 h3 {
   font-family: "Oswald", sans-serif;
+}
+.goUp{
+  font-size: 3rem;
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s all;
+}
+.goUp--show{
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s all;
+}
+.goUp:hover{
+  font-size: 3.5rem;
+}
+.goUp a:hover{
+  color: whitesmoke;
+}
+
+.goUp a:visited{
+  color: whitesmoke
 }

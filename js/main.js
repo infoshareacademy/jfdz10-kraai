@@ -16,6 +16,7 @@ var goUpButton = document.querySelector(cssSelectors.GO_UP);
 var scrollOffsetTop = window.scrollY;
 var scrollThreshold = 20;
 var goUpButtonThreshold = 300;
+var scrollOffsetTopMarginTop = 200;
 
 
 function setScrollPosition() {
@@ -60,7 +61,7 @@ function checkActiveSection() {
         var allLinks = document.querySelectorAll('.nav-menu__link');
         var activeLink = document.querySelector('.nav-menu__link--active');
        
-        if (sectionTop <= scrollOffsetTop + 200) {
+        if (sectionTop <= scrollOffsetTop +scrollOffsetTopMarginTop) {
             activeLink.classList.remove('nav-menu__link--active');
             allLinks[i].classList.add('nav-menu__link--active');
         }

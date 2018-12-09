@@ -1,126 +1,229 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/hero.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/features.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/team.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/more.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/form.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/footer.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-    crossorigin="anonymous">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Paw Love</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/hero.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/features.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/team.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/more.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/form.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
-  <nav class="nav">
-    <div class="nav-logo">
-      <img src="img/logo.png" class="nav-logo__img1" alt="Paw Love Logo" />
-      <img src="img/logo2.png" class="nav-logo__img2 nav-logo--hide" alt="Paw Love Logo" />
-    </div>
-    <a class="nav__trigger"><i class="fas fa-bars"></i></a>
-    <ul class="nav-menu nav-menu--hide">
-      <li class="nav-menu__item">
-        <a href="#hero" class="nav-menu__link nav-menu__link--active">start</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="#features" class="nav-menu__link">funkcje</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="#team" class="nav-menu__link">o nas</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="#more" class="nav-menu__link">więcej</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="#form" class="nav-menu__link">kontakt</a>
-      </li>
-    </ul>
-  </nav>
-  <section class="hero" id="hero">
-    <div class="hero__text">
-      <h1 class="tittle1">Znajdź swoją drugą połówkę</h1>
-      <h2 class="tittle2">Paw love</h2>
-    </div>
-    <div class="cta"><a href="#" class="cta__link">Szukaj</a></div>
-    <div class="hero__img"><img class="img" src="img/header__img.png"></div>
-  </section>
-  <section class="features" id="features"></section>
-  <section class="team" id="team">
-    <div class="container-team container--cards">
+  <body>
+    <nav class="nav">
+      <div class="nav-logo">
+        <img src="img/logo.png" class="nav-logo__img1" alt="Paw Love Logo" />
+        <img src="img/logo2.png" class="nav-logo__img2 nav-logo--hide" alt="Paw Love Logo" />
+      </div>
+      <a class="nav__trigger"><i class="fas fa-bars"></i></a>
+      <ul class="nav-menu nav-menu--hide">
+        <li class="nav-menu__item">
+          <a href="#hero" class="nav-menu__link nav-menu__link--active">start</a>
+        </li>
+        <li class="nav-menu__item"><a href="#features" class="nav-menu__link">funkcje</a></li>
+        <li class="nav-menu__item"><a href="#team" class="nav-menu__link">o nas</a></li>
+        <li class="nav-menu__item"><a href="#more" class="nav-menu__link">więcej</a></li>
+        <li class="nav-menu__item"><a href="#form" class="nav-menu__link">kontakt</a></li>
+      </ul>
+    </nav>
+    <section class="hero" id="hero">
+      <div class="hero__text">
+        <h1 class="tittle1">Znajdź swoją drugą połówkę</h1>
+        <h2 class="tittle2">Paw love</h2>
+      </div>
+      <div class="cta"><a href="#form" class="cta__link">Szukaj</a></div>
+      <div class="hero__img"><img class="img" src="img/header__img.png" /></div>
+    </section>
+    <section class="features" id="features">
+      <div class="features__container">
+        <div class="features__item">
+          <img class="features__icon" src="img/features__icon4.png" alt="Ikona" />
+          <p class="features__paragraph">Zlokalizuj schronisko</p>
+        </div>
+        <div class="features__item">
+          <img class="features__icon" src="img/features__icon1.png" alt="Ikona" />
+          <p class="features__paragraph">Określ jakiego szukasz zwiarzaka</p>
+        </div>
+        <div class="features__item">
+          <img class="features__icon" src="img/features__icon2.png" alt="Ikona" />
+          <p class="features__paragraph">Przeswapuj</p>
+        </div>
+        <div class="features__item">
+          <img class="features__icon" src="img/features__icon3.png" alt="Ikona" />
+          <p class="features__paragraph">Zaadoptuj</p>
+        </div>
+      </div>
+    </section>
+    <section class="team" id="team">
+      <div class="container-team container--cards">
+        <div class="item-team item--1">
+          <div class="card-team card--1">
+            <img class="head-team" src="img/daria.png" alt="logo" />
+            <img class="logo-team" src="img/logo3.png" alt="logo" />
+            <h2 class="name2-team">
+              Daria<br />
+              Kozielecka
+            </h2>
+            <p class="quote-team">
+              przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem
+            </p>
+            <ul class="team">
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_square-facebook_317727.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_instagram_317738.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_Github_1298743.png" alt="#"
+                /></a>
+              </li>
+            </ul>
+            <p class="name-team"></p>
+          </div>
+        </div>
 
-            <div class="item-team item--1">
-              <div class="card-team card--1">
-                  <img class="head-team" src="img/daria.png" alt="logo">
-                  <img class="logo-team" src="img/logo3.png" alt="logo">
-                  <h2 class="name2-team">Daria<br> Kozielecka</h2>
-                  <p class="quote-team">przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem </p>
-                  <ul class="team">
-                    <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_square-facebook_317727.png" alt="#"></a></li>
-                    <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_instagram_317738.png" alt="#"></a></li>
-                    <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_Github_1298743.png" alt="#"></a></li>
-                  </ul>
-                  <p class="name-team"> </p>
-              </div>
-            </div>
+        <div class="item-team item--2">
+          <div class="card-team card--2">
+            <img class="logo-team" src="img/logo3.png" alt="logo" />
+            <img class="head-team" src="img/jakub.png" alt="logo" />
+            <h2 class="name-team">
+              Jakub<br />
+              Rohde
+            </h2>
+            <p class="quote-team">
+              przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem
+            </p>
+            <ul class="team">
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_square-facebook_317727.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_instagram_317738.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_Github_1298743.png" alt="#"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            <div class="item-team item--2">
-              <div class="card-team card--2">
-                <img class="logo-team" src="img/logo3.png" alt="logo">
-                <img class="head-team" src="img/jakub.png" alt="logo">
-                <h2 class="name-team">Jakub<br> Rohde</h2>
-                <p class="quote-team">przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem</p>
-                <ul class="team">
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_square-facebook_317727.png" alt="#"></a></li>
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_instagram_317738.png" alt="#"></a></li>
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_Github_1298743.png" alt="#"></a></li>
-                </ul>
-                
-            </div>
+        <div class="item-team item--3">
+          <div class="card-team card--3">
+            <img class="logo-team" src="img/logo3.png" alt="logo" />
+            <img class="head-team" src="img/lukasz.png" alt="logo" />
+            <h2 class="name-team">
+              Łukasz<br />
+              Billot
+            </h2>
+            <p class="quote-team">
+              przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem
+            </p>
+            <ul class="team">
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_square-facebook_317727.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_instagram_317738.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_Github_1298743.png" alt="#"
+                /></a>
+              </li>
+            </ul>
           </div>
+        </div>
 
-            <div class="item-team item--3">
-              <div class="card-team card--3">
-                <img class="logo-team" src="img/logo3.png" alt="logo">
-                <img class="head-team" src="img/lukasz.png" alt="logo">
-                <h2 class="name-team">Łukasz<br> Billot</h2>
-                <p class="quote-team">przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem</p>
-                <ul class="team">
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_square-facebook_317727.png" alt="#"></a></li>
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_instagram_317738.png" alt="#"></a></li>
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_Github_1298743.png" alt="#"></a></li>
-                </ul>
-              
-            </div>
+        <div class="item-team item--4">
+          <div class="card-team card--4">
+            <img class="logo-team" src="img/logo3.png" alt="logo" />
+            <img class="head-team" src="img/jura.png" alt="logo" />
+            <h2 class="name-team">
+              Jerzy<br />
+              Fudali
+            </h2>
+            <p class="quote-team">
+              przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem
+            </p>
+            <ul class="team">
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_square-facebook_317727.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_instagram_317738.png" alt="#"
+                /></a>
+              </li>
+              <li>
+                <a href="www.siteyouwishtolinkto.com" class="social"
+                  ><img src="img/iconfinder_Github_1298743.png" alt="#"
+                /></a>
+              </li>
+            </ul>
           </div>
-          
-            <div class="item-team item--4">
-              <div class="card-team card--4">
-                <img class="logo-team" src="img/logo3.png" alt="logo">
-                <img class="head-team" src="img/jura.png" alt="logo">
-                <h2 class="name-team">Jerzy<br> Fudali</h2>
-                <p class="quote-team">przekosiłam chyba już cały internet i mam sporo stronek z darmowym contentem</p>
-                <ul class="team">
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_square-facebook_317727.png" alt="#"></a></li>
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_instagram_317738.png" alt="#"></a></li>
-                  <li><a href="www.siteyouwishtolinkto.com" class="social"><img src="img/iconfinder_Github_1298743.png" alt="#"></a></li>
-                </ul>
-             
-            </div>
-          </div>
-          </div>
-</section>
-  <section class="more" id="more"></section>
-  <section class="form" id="form"></section>
-  <footer class="footer"></footer>
-  <script src="js/main.js"></script>
-</body>
+        </div>
+      </div>
+    </section>
+    <section class="more" id="more"></section>
+    <span class="separator"></span>
+    <section class="form" id="form">
+      <form>
+      <h3 class="tittle3">Bądź pierwszy! Zapisz się na premierę.</h3>
+      <span class="form__tittle">Imię</span>
+      <input type="text" class="form__name form__field" name="firstname" pattern="[A-Za-z]{1,20}" title="Tylko małe i duże litery. Maksymalnie 20 znaków" />
+      <span class="form__tittle">Nazwisko</span>
+      <input type="text" class="form__surname form__field" name="lastname" pattern="[A-Za-z]{1,20}" title="Tylko małe i duże litery. Maksymalnie 20 znaków"/>
+      <span class="form__tittle">E-mail</span>
+      <input type="email" class="form__mail form__field" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+      <input type="submit" value="Submit" class="form__submit" />
+      <div id="form__popup">
+        <p>W odpowiedzi otrzymasz od nas jedna wiadomość z informacją o dacie premiery.</p>
+        <p>Twoje prywatne dane nie zostaną użyte do innych celów.</p>
+      </div>
+    </form>
+    </section>
+    <span class="separator"></span>
+    <footer class="footer">
+      <img class="footer__img" src="img/logo3.png" alt="logo footer" />
+      <div class="footer__copy">
+        Copyright &copy; Paw Love 2018 Made by Kraai <br />
+        Polityka prywatności
+      </div>
+    </footer>
+    <div class="goUp"> <a href="#hero"><i class="far fa-arrow-alt-circle-up"></i> </a>  </div>
+    <script src="js/main.js"></script>
+    <script src="js/privacy-policy.js"></script>
+  </body>
 </html>
-

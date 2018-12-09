@@ -8,7 +8,7 @@
 
 .container--cards {
   
-  background-image: url("/img/pug-801826_1920.jpg");
+  background-image: url("../img/pug-801826_1920.jpg");
   height: 100%;
   background-attachment: fixed;
   background-position: center;
@@ -229,7 +229,7 @@
 
       @media only screen and (max-width: 900px) {
       .container-team {
-        grid-template-columns:100px 1fr 1fr 100px;
+        grid-template-columns:5% 1fr 1fr 5%;
         grid-template-rows: 1fr 1fr;
         grid-template-areas: ". daria jakub ." ". kamil jerzy ."
       }
@@ -240,5 +240,18 @@
       }
     }
 
+    @media only screen and (max-width: 900px) {
+      .item-team {
+        width: 200px;
+      }
+    }
+    @media only screen and (max-width: 455px) {
+      .container-team {
+        grid-template-columns:10% 1fr 10%;
+        grid-template-rows: 1fr;
+        grid-template-areas: ". daria ." ". jakub ." ". kamil ." ". jerzy .";
+        justify-items: center;
+      }
+      }
       
   

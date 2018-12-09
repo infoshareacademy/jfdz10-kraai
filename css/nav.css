@@ -11,7 +11,7 @@
 }
 
 .nav--bg {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   transition: 0.3s;
 }
 
@@ -54,7 +54,7 @@
   z-index: -1;
   opacity: 1;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   transition: 0.5s background-color;
 }
 

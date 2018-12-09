@@ -39,3 +39,6 @@ h3 {
 .goUp a:visited{
   color: whitesmoke
 }
+.goUp a:active{
+  color: whitesmoke
+}

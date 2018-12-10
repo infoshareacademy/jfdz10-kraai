@@ -166,13 +166,37 @@
   height:50px;
 }
 
+/* rotating  */
+
+.item-team {
+  perspective: 1000;
+  margin: 100px auto;
+}
 
 
+.item-team:hover .card-team, .item-team.hover .card-team {
+transform: rotateY(180deg);
+}
 
+
+.card-team {
+	transition: 0.9s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+
+.head-team, .logo-team, .name2-team, .quote-team, .team {
+	backface-visibility: hidden;
+	top: 0;
+	left: 0;
+}
+  
 
 /* stylowa dla reszty */
 @media only screen and (max-width: 1022px) {
 .name-team {
+
     font-size: 17px;
     min-height: 80px;
   }

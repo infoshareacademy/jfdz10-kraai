@@ -166,13 +166,52 @@
   height:50px;
 }
 
+/* rotating  */
+
+.item-team {
+  perspective: 1000;
+  margin: 100px auto;
+}
+
+.card-team {
+	transition: 0.9s;
+	transform-style: preserve-3d;
+  position: relative;
+ 
+}
 
 
 
+
+
+
+
+.head-team, .logo-team, .name2-team, .quote-team, .team, .back {
+  -webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	top: 0px;
+	left: 0px;
+}
+
+.item-team:hover .card-team:hover {
+  transform: rotateY(180deg);
+  }
+
+  .head-team, .logo-team, .name2-team, .quote-team, .team {
+    z-index: 999;
+  }
+
+.back {
+  position: absolute;
+  -webkit-transform: rotateY(180deg);
+  background: brown;
+}
+  
 
 /* stylowa dla reszty */
 @media only screen and (max-width: 1022px) {
 .name-team {
+
     font-size: 17px;
     min-height: 80px;
   }

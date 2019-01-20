@@ -1,48 +1,47 @@
 const htmlObjects = {
   viewport: document.querySelector(".viewport"),
   platform: document.querySelector(".platform"),
-  obstacleElement: document.querySelectorAll(".obstacle")
+  getObstacleElements(){return document.querySelectorAll(".obstacle")},
+  obstacleElement: document.querySelectorAll(".obstacle"),
 };
 const gameConfiguration = {
+  minDistanceBetweenObstacles: 150,
+  maxDistanceBetweenObstacles: 600,
   gameSpeed : 1,
-  obstacleSpeed(){ return Math.random() * 1500 },
   viewportWidth : htmlObjects.viewport.offsetWidth,
+  platformWidth: htmlObjects.platform.offsetWidth,
 }
-
-let obstacle = htmlObjects.obstacleElement;
-let platform = htmlObjects.platform;
-let obstacleCount = 0;
 
 function obstacleCreator() {
-
+  let minimalDistance = gameConfiguration.minDistanceBetweenObstacles;
+  let maximalDistance = gameConfiguration.maxDistanceBetweenObstacles;
+  let actualPositionOnPlatform = gameConfiguration.viewportWidth;
+  
+  while(actualPositionOnPlatform <= gameConfiguration.platformWidth - gameConfiguration.viewportWidth ){
     let newObstacle = document.createElement("div");
-    newObstacle.style.left = `${gameConfiguration.viewportWidth + 50 - platform.offsetLeft}px`;
+    let obstaclePosition = actualPositionOnPlatform;
+    newObstacle.style.left = `${obstaclePosition}px`;
     newObstacle.classList.add("obstacle");
-    platform.appendChild(newObstacle);
-    gameConfiguration.obstacleSpeed = 
-    countObstacle(1);
- 
-}
-
-function countObstacle(amount) {
-  obstacleCount = obstacleCount + amount;
-  htmlObjects.obstacleElement = document.querySelectorAll('.obstacle');
-  obstacle = htmlObjects.obstacleElement;
-}
+    htmlObjects.platform.appendChild(newObstacle);
+    obstaclePosition = actualPositionOnPlatform + minimalDistance + Math.random() * (maximalDistance-minimalDistance);
+    actualPositionOnPlatform = obstaclePosition;
+   
+  };
+  };
 
 function gameMove(){
   const moveInterval = setInterval(() => {
-   platform.style.left = `${platform.offsetLeft - 2}px`;
- },10)
+    let platformOffset = htmlObjects.platform.offsetLeft;
+    if(platformOffset + gameConfiguration.platformWidth  > gameConfiguration.viewportWidth){
+   htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft - 2}px`;
+    }else{clearInterval(moveInterval);}
+    console.log(platformOffset + gameConfiguration.platformWidth)
+ },10 /gameConfiguration.gameSpeed)
 
 }
-
+obstacleCreator();
 gameMove();
 
-setInterval(() => {
-  obstacleCreator();
-  
-  
-}, gameConfiguration.obstacleSpeed());
+
 
 

@@ -18,3 +18,4 @@ function moveCharacter() {
     }, 500);
   }
 }
+moveCharacter();

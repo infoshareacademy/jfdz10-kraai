@@ -1,30 +1,59 @@
-html , body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.viewport{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    background-color: lightblue;
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: lightblue;
 }
-.platform{
-    height: 100px;
-    width: 5000px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: burlywood;
+.platform {
+  height: 100px;
+  width: 5000px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: burlywood;
 }
-.obstacle{
-    bottom: 100px;
-    height: 50px;
-    width: 50px;
-    background-color: black;
-    position: absolute;
+.obstacle {
+  bottom: 100px;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  position: absolute;
 }
-
+.character {
+  width: 50px;
+  height: 100px;
+  background-color: rgb(59, 156, 80);
+  position: absolute;
+  bottom: 100px;
+  left: 30px;
+  transition: 0.3s linear;
+}
+.score {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  line-height: 50px;
+}
+.candy {
+  position: absolute;
+  bottom: 120px;
+  width: 50px;
+  height: 25px;
+  background-color: rgb(187, 31, 140);
+  right: 20px;
+}

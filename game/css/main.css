@@ -12,15 +12,20 @@ body {
   left: 0;
   overflow: hidden;
   background-color: lightblue;
+
+
 }
 .platform {
+  background-image: url('platform01.png');
   height: 100px;
   width: 5000px;
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: burlywood;
 }
+
+
+
 .obstacle {
   bottom: 100px;
   height: 50px;
@@ -29,13 +34,13 @@ body {
   position: absolute;
 }
 .character {
-  width: 50px;
-  height: 100px;
-  background-color: rgb(59, 156, 80);
+  height: 154px;
+  width: 171px;
+  background-image: url('bearbear.png');
   position: absolute;
   bottom: 100px;
   left: 30px;
-  transition: 0.3s linear;
+  /* transition: 0.3s linear; */
 }
 .score {
   position: absolute;

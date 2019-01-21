@@ -39,6 +39,7 @@ function gameMove(){
  },10 /gameConfiguration.gameSpeed)
 
 }
+
 obstacleCreator();
 gameMove();
 

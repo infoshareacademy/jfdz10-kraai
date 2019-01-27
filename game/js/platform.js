@@ -1,55 +1,60 @@
 const htmlObjects = {
   viewport: document.querySelector(".viewport"),
   platform: document.querySelector(".platform"),
-  getObstacleElements(){return document.querySelectorAll(".obstacle")},
-  getCandyElements(){return document.querySelectorAll(".candy")},
+  getObstacleElements() {return document.querySelectorAll(".obstacle")},
+  getObstaclePositions() { return Array.from(this.getObstacleElements())
+    .map(element =>({
+      width: element.offsetWidth,
+      height: element.offsetHeight,
+      left: element.offsetLeft,
+      right: element.offsetLeft + element.offsetWidth,
+      top: element.offsetTop,
+      down: element.offsetTop + element.offsetHeight,
+    })
+    )
+  },
+  getCandyElements() {return document.querySelectorAll(".candy")},
 };
 const gameConfiguration = {
-  minDistanceBetweenObstacles: 150,
-  maxDistanceBetweenObstacles: 600,
+  minDistanceBetweenObstacles: 600,
+  maxDistanceBetweenObstacles: 1200,
   minDistanceBetweenCandy: 100,
   maxDistanceBetweenCandy: 300,
-  gameSpeed : 1,
+  gameSpeed : 5,
   viewportWidth : htmlObjects.viewport.offsetWidth,
   platformWidth: htmlObjects.platform.offsetWidth,
+  isPlatformEnd: false,
 }
 
-function obstacleCreator() {
+const obstacleCreator = () => {
   let minimalDistance = gameConfiguration.minDistanceBetweenObstacles;
   let maximalDistance = gameConfiguration.maxDistanceBetweenObstacles;
-  let actualPositionOnPlatform = gameConfiguration.viewportWidth;
+  let obstaclePositionOnPlatform = gameConfiguration.viewportWidth;
   
-  while(actualPositionOnPlatform <= gameConfiguration.platformWidth - gameConfiguration.viewportWidth ){
+  while(obstaclePositionOnPlatform <= gameConfiguration.platformWidth - gameConfiguration.viewportWidth ){
     let newObstacle = document.createElement("div");
-    let obstaclePosition = actualPositionOnPlatform;
+    let obstaclePosition = obstaclePositionOnPlatform;
     newObstacle.style.left = `${obstaclePosition}px`;
     newObstacle.classList.add("obstacle");
     htmlObjects.platform.appendChild(newObstacle);
-    obstaclePosition = actualPositionOnPlatform + minimalDistance + Math.random() * (maximalDistance-minimalDistance);
-    actualPositionOnPlatform = obstaclePosition;
+    obstaclePosition = obstaclePositionOnPlatform + minimalDistance + Math.random() * (maximalDistance-minimalDistance);
+    obstaclePositionOnPlatform = obstaclePosition;
   };
   };
-
-function gameMove(){
+const checkingPlatformEnd = () => {
+  let platformOffset = htmlObjects.platform.offsetLeft;
+  return platformOffset + gameConfiguration.platformWidth  > gameConfiguration.viewportWidth;
+};
+const gameMove = () => {
   const moveInterval = setInterval(() => {
-    let platformOffset = htmlObjects.platform.offsetLeft;
-    if(platformOffset + gameConfiguration.platformWidth  > gameConfiguration.viewportWidth){
-   htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft - 2}px`;
+    if(checkingPlatformEnd()){
+   htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft - gameConfiguration.gameSpeed}px`;
     }else{clearInterval(moveInterval);}
- },10 /gameConfiguration.gameSpeed)
+ },10)
 
 }
-<<<<<<< HEAD
 
-obstacleCreator();
-gameMove();
-=======
->>>>>>> acf58262e405bb3ffbb8bd3fc1e3921427a593ef
-
-
-function candyCreator(){
-  let obstacleArr = Array.from(htmlObjects.getObstacleElements());
- 
+function candyCreator(){ 
   let minimalDistance = gameConfiguration.minDistanceBetweenCandy;
   let maximalDistance = gameConfiguration.maxDistanceBetweenCandy;
   let actualPositionOnPlatform = gameConfiguration.viewportWidth;
@@ -63,27 +68,23 @@ function candyCreator(){
     candyPosition = actualPositionOnPlatform + minimalDistance + Math.random() * (maximalDistance-minimalDistance);
     actualPositionOnPlatform = candyPosition;
 }
-let candyArr = Array.from(htmlObjects.getCandyElements())
-  let allObstaclePositions = obstacleArr.map(obstacle => {
-    return {
-      left: obstacle.offsetLeft,
-      right: obstacle.offsetLeft + obstacle.offsetWidth,
-    }
-  });
-  let allCandyPosition = candyArr.map(candy => {
-    return {
-      left: candy.offsetLeft,
-      right: candy.offsetLeft + candy.offsetWidth,
-    }
-  });
+}
 
-  let filteredCandy = allCandyPosition.filter(candy => {
-    allObstaclePositions.forEach(obstacle => {
-      return candy.left >= obstacle.left;
-    })
-  });
- 
-  console.log(filteredCandy);
+const checkCollisionX = (objectX, objectY) => {
+
+  if ((objectY.left - objectX.left >= 0 && objectY.left - objectX.left <= objectX.width) || (objectX.right - objectY.right >= 0 && objectX.right - objectY.right <= objectX.width)) {
+      return true;
+  } else {
+      return false;
+  };
+}
+
+const checkCollisionY = (objectX, objectY) => {
+  if ((objectY.top - objectX.top >= 0 && objectY.top - objectX.top <= objectX.height) || (objectX.down - objectY.down >= 0 && objectX.down - objectY.down <= objectX.height)) {
+      return true
+  } else {
+      return false
+  }
 }
 
 obstacleCreator();

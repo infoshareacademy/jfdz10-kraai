@@ -4,16 +4,19 @@ function moveCharacter() {
   const space = document.querySelector(".viewport");
   space.appendChild(character);
   const keyJump = 32;
+  let isFalling = false;
 
   document.addEventListener("keydown", jump);
 
   function jump(event) {
-    if (event.keyCode === keyJump) {
-      character.style.bottom = "200px";
+    if (event.keyCode === keyJump && !isFalling) {
+      character.style.bottom = "250px";
     }
     setTimeout(function fall() {
-      if (character.style.bottom === "200px") {
+      if (character.style.bottom === "250px") {
         character.style.bottom = "100px";
+        isFalling = true;
+        setTimeout(()=> {isFalling = false;},300)
       }
     }, 500);
   }

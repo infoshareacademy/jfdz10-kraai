@@ -27,10 +27,10 @@ body {
 
 
 .obstacle {
+  background-image: url('cactus.png');
   bottom: 100px;
-  height: 50px;
-  width: 50px;
-  background-color: black;
+  height: 80px;
+  width: 59px;
   position: absolute;
 }
 .character {

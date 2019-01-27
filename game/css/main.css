@@ -55,10 +55,10 @@ body {
   line-height: 50px;
 }
 .candy {
+  background-image: url('carrot.png');
   position: absolute;
   bottom: 120px;
   width: 50px;
-  height: 25px;
-  background-color: rgb(187, 31, 140);
+  height: 45px;
   right: 20px;
 }

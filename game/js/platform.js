@@ -5,6 +5,7 @@ const htmlObjects = {
   backgroundLayer1: document.querySelector(".layer1"),
   backgroundLayer2: document.querySelector(".layer2"),
   backgroundLayer3: document.querySelector(".layer3"),
+  character: document.querySelector(".character"),
   getObstacleElements() {
     return document.querySelectorAll(".obstacle")
   },
@@ -21,6 +22,16 @@ const htmlObjects = {
   },
   getCandyElements() {
     return document.querySelectorAll(".candy")
+  },
+  getCharacterPosition() {
+    return {
+      width: this.character.offsetWidth,
+        height: this.character.offsetHeight,
+        left: this.character.offsetLeft - this.platform.offsetLeft,
+        right: this.character.offsetLeft + this.character.offsetWidth - this.platform.offsetLeft,
+        top: this.character.offsetTop - this.background.offsetHeight + this.platform.offsetHeight,
+        down: this.character.offsetTop + this.character.offsetHeight,
+    }
   },
 };
 
@@ -91,26 +102,29 @@ const gameMove = () => {
       htmlObjects.backgroundLayer1.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer1).backgroundPositionX) - gameConfiguration.gameSpeed /8}px`;
       htmlObjects.backgroundLayer2.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer2).backgroundPositionX) - gameConfiguration.gameSpeed /6}px`;
       htmlObjects.backgroundLayer3.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer3).backgroundPositionX) - gameConfiguration.gameSpeed /4}px`;
+      obstacleColision(moveInterval);
     } else {
       clearInterval(moveInterval);
     }
   }, 10)
 
 }
-
+const obstacleColision = (interval) => {
+  htmlObjects.getObstaclePositions().forEach(obstacle => {
+    if (checkCollisionX(htmlObjects.getCharacterPosition(), obstacle) && checkCollisionY(htmlObjects.getCharacterPosition(), obstacle)) {
+      console.log('collision!');
+      clearInterval(interval);
+    }
+  });
+}
 
 
 const checkCollisionX = (objectX, objectY) => {
   return (objectY.left - objectX.left >= 0 && objectY.left - objectX.left <= objectX.width) || (objectX.right - objectY.right >= 0 && objectX.right - objectY.right <= objectX.width)
-  
 }
 
 const checkCollisionY = (objectX, objectY) => {
-  if ((objectY.top - objectX.top >= 0 && objectY.top - objectX.top <= objectX.height) || (objectX.down - objectY.down >= 0 && objectX.down - objectY.down <= objectX.height)) {
-    return true
-  } else {
-    return false
-  }
+  return (objectY.top - objectX.top >= 0 && objectY.top - objectX.top <= objectX.height) || (objectX.down - objectY.down >= 0 && objectX.down - objectY.down <= objectX.height)
 }
 
 obstacleCreator();

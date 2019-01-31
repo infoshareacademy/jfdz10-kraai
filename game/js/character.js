@@ -5,7 +5,7 @@ let keyDownCount = 0;
 function moveCharacter() {
   const character = document.createElement("div");
   character.className = "character";
-  const space = document.querySelector(".viewport");
+  const space = document.querySelector(".platform");
   space.appendChild(character);
   const keyJump = 32;
 
@@ -71,3 +71,4 @@ function animateScript() {
     }
   }, interval);
 }
+

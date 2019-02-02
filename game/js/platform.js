@@ -13,6 +13,7 @@ const htmlObjects = {
     })
     )
   },
+
   getCandyElements() {return document.querySelectorAll(".candy")},
 };
 const gameConfiguration = {
@@ -25,6 +26,9 @@ const gameConfiguration = {
   platformWidth: htmlObjects.platform.offsetWidth,
   isPlatformEnd: false,
 }
+
+
+
 
 const obstacleCreator = () => {
   let minimalDistance = gameConfiguration.minDistanceBetweenObstacles;

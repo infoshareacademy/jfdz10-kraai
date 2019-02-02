@@ -62,3 +62,13 @@ body {
   height: 45px;
   right: 20px;
 }
+
+
+.cloud {
+  background-image: url('cloud.png');
+  position: absolute;
+  bottom: 820px;
+  width: 260px;
+  height: 134px;
+  right: 20px;
+}

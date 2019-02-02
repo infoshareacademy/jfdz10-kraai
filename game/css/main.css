@@ -1,0 +1,93 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: lightblue;
+}
+.background{
+  bottom: 100px;
+  height: 100vh;
+  width: 10000px;
+  position: fixed;
+  left: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+.layer1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(layer_01_1920\ x\ 1080.png);
+  z-index: 1;
+}
+.layer2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(layer_02_1920\ x\ 1080.png);
+  z-index: 2;
+ 
+}
+.layer3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(layer_03_1920\ x\ 1080.png);
+  z-index: 3;
+  
+}
+.platform {
+  background-image: url('platform01.png');
+  height: 100px;
+  width: 10000px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+.obstacle {
+  background-image: url('cactus.png');
+  bottom: 100px;
+  height: 80px;
+  width: 59px;
+  position: absolute;
+}
+.character {
+  height: 154px;
+  width: 171px;
+  background-image: url('bearbear.png');
+  position: absolute;
+  bottom: 100px;
+  left: 30px;
+  transition: 0.3s linear bottom; 
+}
+.score {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  line-height: 50px;
+}
+.candy {
+  background-image: url('carrot.png');
+  position: absolute;
+  bottom: 120px;
+  width: 50px;
+  height: 45px;
+}

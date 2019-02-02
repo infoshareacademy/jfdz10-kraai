@@ -25,10 +25,10 @@ const htmlObjects = {
   },
   getCharacterPosition() {
     return {
-      width: this.character.offsetWidth,
+      width: this.character.offsetWidth -10,
         height: this.character.offsetHeight,
-        left: this.character.offsetLeft - this.platform.offsetLeft,
-        right: this.character.offsetLeft + this.character.offsetWidth - this.platform.offsetLeft,
+        left: this.character.offsetLeft - this.platform.offsetLeft ,
+        right: this.character.offsetLeft + this.character.offsetWidth - this.platform.offsetLeft  +30,
         top: this.character.offsetTop - this.background.offsetHeight + this.platform.offsetHeight,
         down: this.character.offsetTop + this.character.offsetHeight,
     }

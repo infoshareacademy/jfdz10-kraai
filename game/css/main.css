@@ -65,9 +65,10 @@ body {
 }
 .character {
   height: 154px;
-  width: 171px;
+  width: 130px;
   background-image: url('bearbear.png');
-  position: absolute;
+  background-position: center;
+  position: fixed;
   bottom: 100px;
   left: 30px;
   transition: 0.3s linear bottom; 

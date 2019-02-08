@@ -4,6 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
 .viewport {
   width: 100vw;
   height: 100vh;
@@ -13,7 +14,8 @@ body {
   overflow: hidden;
   background-color: lightblue;
 }
-.background{
+
+.background {
   bottom: 100px;
   height: 100vh;
   width: 10000px;
@@ -23,36 +25,57 @@ body {
   background-size: contain;
   background-repeat: repeat-x;
 }
-.layer1{
+
+.layer {
   position: absolute;
   width: 100%;
   height: 100%;
+
+}
+
+.background1 .layer1 {
   background-image: url(layer_01_1920\ x\ 1080.png);
   z-index: 1;
 }
-.layer2{
-  position: absolute;
-  width: 100%;
-  height: 100%;
+
+.background1 .layer2 {
   background-image: url(layer_02_1920\ x\ 1080.png);
   z-index: 2;
- 
+
 }
-.layer3{
-  position: absolute;
-  width: 100%;
-  height: 100%;
+
+.background1 .layer3 {
   background-image: url(layer_03_1920\ x\ 1080.png);
   z-index: 3;
-  
+
 }
+
 .platform {
-  background-image: url('platform01.png');
-  height: 100px;
-  width: 10000px;
+  height: 99px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  display: flex;
+}
+
+.platform1 {
+  background-image: url('platform01.png');
+  width: 20000px;
+}
+
+.platform2 {
+  background-image: url('platrorm02.png');
+  width: 20000px;
+}
+
+.platform3 {
+  background-image: url('platform3.png');
+  width: 20000px;
+
+}
+
+.platform4 {
+  background-image: url('platform01.png');
+  width: 20000px;
 }
 
 
@@ -63,6 +86,7 @@ body {
   width: 59px;
   position: absolute;
 }
+
 .character {
   height: 154px;
   width: 130px;
@@ -71,8 +95,9 @@ body {
   position: fixed;
   bottom: 100px;
   left: 30px;
-  transition: 0.3s linear bottom; 
+  transition: 0.25s linear bottom;
 }
+
 .score {
   position: absolute;
   right: 10px;
@@ -85,6 +110,20 @@ body {
   text-align: center;
   line-height: 50px;
 }
+
+.level {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  line-height: 50px;
+}
+
 .candy {
   background-image: url('carrot.png');
   position: absolute;

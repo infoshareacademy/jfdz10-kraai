@@ -38,7 +38,7 @@ const gameStart = () => {
       return document.querySelectorAll(".candy");
     },
     getCandyPositions() {
-      return Array.from(this.getCandyElements()).map(element, index => ({
+      return Array.from(this.getCandyElements()).map((element, index) => ({
         width: element.offsetWidth,
         height: element.offsetHeight,
         left: element.offsetLeft,

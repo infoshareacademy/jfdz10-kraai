@@ -27,7 +27,7 @@ function moveCharacter() {
           
           land();
         }
-      }, 600);}
+      }, 500);}
     }
 
   }

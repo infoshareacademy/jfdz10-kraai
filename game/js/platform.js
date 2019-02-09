@@ -1,6 +1,14 @@
+let speedLevel = 1;
+let level = 1;
+ 
 const htmlObjects = {
   viewport: document.querySelector(".viewport"),
-  platform: document.querySelector(".platform"),
+  platform: document.querySelector('.platform'),
+  platform1: document.querySelector(".platform1"),
+  platform2: document.querySelector(".platform2"),
+  platform3: document.querySelector(".platform3"),
+  platform4: document.querySelector(".platform4"),
+  levelCounter: document.querySelector(".level"),
   background: document.querySelector(".background"),
   backgroundLayer1: document.querySelector(".layer1"),
   backgroundLayer2: document.querySelector(".layer2"),
@@ -34,18 +42,20 @@ const htmlObjects = {
     }
   },
 };
+const levelDisplay = () => htmlObjects.levelCounter.innerHTML = `Level ${level}`;
 
-const gameConfiguration = {
-  minDistanceBetweenObstacles: 500,
-  maxDistanceBetweenObstacles: 1000,
+let gameConfiguration = {
+  minDistanceBetweenObstacles: 800 ,
+  maxDistanceBetweenObstacles: 1200 ,
   minDistanceBetweenCandy: 100,
   maxDistanceBetweenCandy: 100,
   maxCandySet: 6,
   maxCandyTop: -200,
-  gameSpeed: 5,
+  gameSpeed: 5 * speedLevel,
   viewportWidth: htmlObjects.viewport.offsetWidth,
   platformWidth: htmlObjects.platform.offsetWidth,
   isPlatformEnd: false,
+  gameSpeed(){return 5 * speedLevel}
 }
 
 const obstacleCreator = () => {
@@ -53,7 +63,7 @@ const obstacleCreator = () => {
   let maximalDistance = gameConfiguration.maxDistanceBetweenObstacles;
   let obstaclePositionOnPlatform = gameConfiguration.viewportWidth;
 
-  while (obstaclePositionOnPlatform <= gameConfiguration.platformWidth - gameConfiguration.viewportWidth) {
+  while (obstaclePositionOnPlatform <= gameConfiguration.platformWidth ) {
     let newObstacle = document.createElement("div");
     newObstacle.style.left = `${obstaclePositionOnPlatform}px`;
     newObstacle.classList.add("obstacle");
@@ -72,9 +82,9 @@ const candyCreator = (time) => {
       newCandy.classList.add("candy");
       htmlObjects.platform.appendChild(newCandy);
       let newCandyPosition = {
-        width: newCandy.offsetWidth,
+        width: newCandy.offsetWidth + 50,
         height: newCandy.offsetHeight,
-        left: newCandy.offsetLeft,
+        left: newCandy.offsetLeft ,
         right: newCandy.offsetLeft + newCandy.offsetWidth,
         top: newCandy.offsetTop,
         down: newCandy.offsetTop + newCandy.offsetHeight,
@@ -97,15 +107,12 @@ const checkingPlatformEnd = () => {
 };
 const gameMove = () => {
   const moveInterval = setInterval(() => {
-    if (checkingPlatformEnd()) {
-      htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft - gameConfiguration.gameSpeed}px`;
-      htmlObjects.backgroundLayer1.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer1).backgroundPositionX) - gameConfiguration.gameSpeed /8}px`;
-      htmlObjects.backgroundLayer2.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer2).backgroundPositionX) - gameConfiguration.gameSpeed /6}px`;
-      htmlObjects.backgroundLayer3.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer3).backgroundPositionX) - gameConfiguration.gameSpeed /4}px`;
+      htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft - gameConfiguration.gameSpeed()}px`;
+      htmlObjects.backgroundLayer1.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer1).backgroundPositionX) - gameConfiguration.gameSpeed() /8}px`;
+      htmlObjects.backgroundLayer2.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer2).backgroundPositionX) - gameConfiguration.gameSpeed() /6}px`;
+      htmlObjects.backgroundLayer3.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer3).backgroundPositionX) - gameConfiguration.gameSpeed() /4}px`;
       obstacleColision(moveInterval);
-    } else {
-      clearInterval(moveInterval);
-    }
+      levelUp();
   }, 10)
 
 }
@@ -127,6 +134,23 @@ const checkCollisionY = (objectX, objectY) => {
   return (objectY.top - objectX.top >= 0 && objectY.top - objectX.top <= objectX.height) || (objectX.down - objectY.down >= 0 && objectX.down - objectY.down <= objectX.height)
 }
 
+const levelUp = () => {
+ if(htmlObjects.platform2.offsetLeft + htmlObjects.platform.offsetLeft < 0){
+    speedLevel = 1.5;
+    level = 2
+ };
+ if(htmlObjects.platform3.offsetLeft + htmlObjects.platform.offsetLeft < 0){
+  speedLevel = 2;
+  level = 3;
+};
+if(htmlObjects.platform4.offsetLeft + htmlObjects.platform.offsetLeft < 0){
+  speedLevel = 2.5;
+  level = 4;
+};
+levelDisplay();
+};
+
 obstacleCreator();
 candyCreator(0);
 gameMove();
+levelDisplay();

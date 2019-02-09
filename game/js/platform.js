@@ -1,6 +1,10 @@
+let gameOnOrOff = 0;
+
+const gameStart = () => {
 let speedLevel = 1;
 let level = 1;
- 
+time = 100;
+
 const htmlObjects = {
   viewport: document.querySelector(".viewport"),
   platform: document.querySelector('.platform'),
@@ -9,6 +13,8 @@ const htmlObjects = {
   platform3: document.querySelector(".platform3"),
   platform4: document.querySelector(".platform4"),
   levelCounter: document.querySelector(".level"),
+  scoreCounter: document.querySelector(".score"),
+  menu: document.querySelector(".start-menu"),
   background: document.querySelector(".background"),
   backgroundLayer1: document.querySelector(".layer1"),
   backgroundLayer2: document.querySelector(".layer2"),
@@ -42,6 +48,19 @@ const htmlObjects = {
     }
   },
 };
+const gameRestart = () =>{
+  gameOnOrOff = 1;
+  htmlObjects.platform.style.left = 0;
+  htmlObjects.getCandyElements().forEach(element => element.remove());
+  htmlObjects.getObstacleElements().forEach(element => element.remove());
+  htmlObjects.levelCounter.classList.remove('display-none');
+  htmlObjects.scoreCounter.classList.remove('display-none');
+  htmlObjects.menu.classList.add("display-none");
+
+};
+gameRestart();
+
+
 const levelDisplay = () => htmlObjects.levelCounter.innerHTML = `Level ${level}`;
 
 let gameConfiguration = {
@@ -73,7 +92,9 @@ const obstacleCreator = () => {
 };
 
 const candyCreator = (time) => {
-  let candyInterval = setTimeout(() => {
+
+  let candyTimeout = setTimeout(() => {
+    if(gameOnOrOff === 0 ){clearTimeout(candyTimeout)}else{;
     let minimalDistance = gameConfiguration.minDistanceBetweenCandy;
     let elementLeft = htmlObjects.platform.offsetLeft * -1 + gameConfiguration.viewportWidth + minimalDistance;
     for (let i = 0; i < Math.random() * gameConfiguration.maxCandySet; i++) {
@@ -97,14 +118,9 @@ const candyCreator = (time) => {
       elementLeft += minimalDistance;
     };
     candyCreator(Math.random() * 3000 + 1000);
-  }, time);
+  }}, time);
 };
 
-
-const checkingPlatformEnd = () => {
-  let platformOffset = htmlObjects.platform.offsetLeft;
-  return platformOffset + gameConfiguration.platformWidth > gameConfiguration.viewportWidth;
-};
 const gameMove = () => {
   const moveInterval = setInterval(() => {
       htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft - gameConfiguration.gameSpeed()}px`;
@@ -116,13 +132,21 @@ const gameMove = () => {
   }, 10)
 
 }
-const obstacleColision = (interval) => {
+const obstacleColision = (interval ) => {
   htmlObjects.getObstaclePositions().forEach(obstacle => {
     if (checkCollisionX(htmlObjects.getCharacterPosition(), obstacle) && checkCollisionY(htmlObjects.getCharacterPosition(), obstacle)) {
-      console.log('collision!');
       clearInterval(interval);
+      gameOver();
     }
   });
+}
+
+const gameOver = () => { 
+  gameOnOrOff = 0;
+  time = 1000;
+  htmlObjects.levelCounter.classList.add('display-none');
+  htmlObjects.scoreCounter.classList.add('display-none');
+  htmlObjects.menu.classList.remove("display-none");
 }
 
 
@@ -154,3 +178,4 @@ obstacleCreator();
 candyCreator(0);
 gameMove();
 levelDisplay();
+}

@@ -13,7 +13,7 @@ function moveCharacter() {
   document.addEventListener("keydown", jump);
 
   function jump(event) {
-    if (event.keyCode === keyJump ) {
+    if (event.keyCode === keyJump) {
       keyDownCount++;
       
       if (keyDownCount === 1) {
@@ -43,22 +43,23 @@ function moveCharacter() {
     
   }
 }
-moveCharacter();
 
 
+moveCharacter()
 animateScript()
+var time = 1000;
 
-function animateScript() {
-  document.querySelector(".character").style.backgroundPosition =
-    `-171px 0px`;
-}
+
 
 var tID;
 
 function animateScript() {
+  document.querySelector(".character").style.backgroundPosition =
+    `-171px 0px`;
   var position = 0;
-  const interval = 100;
-  tID = setInterval(() => {
+  
+  function setNewTimeout(){
+  tID = setTimeout(() => {
     document.querySelector(".character").style.backgroundPosition =
       `-${position}px 0px`;
     if (keyDownCount === 0) {
@@ -67,8 +68,10 @@ function animateScript() {
       } else {
         position = 171;
       }
-
-    }
-  }, interval);
+      
+    };setNewTimeout();
+  }, time);
+}
+setNewTimeout()
 }
 

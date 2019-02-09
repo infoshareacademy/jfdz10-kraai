@@ -3,6 +3,52 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.start-menu {
+  position: absolute;
+  width: 60%;
+  min-height: 40%;
+  z-index: 100;
+  margin-top: 10%;
+  display: flex;
+
+}
+.instruction{
+  background-color: black;
+  width: 40%;
+  opacity: 0.8;
+  border: #fff solid 5px;
+  border-radius: 25px;
+  padding: 10px;
+  z-index: 200;
+  color: whitesmoke;
+}
+.instruction button{
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  display: block;
+}
+
+.topscore{
+  background-color: black;
+  width: 40%;
+  opacity: 0.8;
+  border: #fff solid 5px;
+  border-radius: 25px;
+  padding: 10px;
+  z-index: 200;
+  color: whitesmoke;
 }
 
 .viewport {

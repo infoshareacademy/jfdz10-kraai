@@ -8,7 +8,7 @@
   background-color: #989b9e;
   color: #203e4a;
 }
-.form form{
+.form form {
   display: flex;
   max-width: 100vw;
   height: auto;
@@ -36,12 +36,10 @@
   font-size: 2.8rem;
   border: 2px solid #1b1b1b;
   background-color: #989b9e;
-  box-shadow: 2px 2px 20px #000;
   color: white;
 }
 .form__field:focus {
   border: 2px solid #203e4a;
-  box-shadow: 4px 4px 30px #000;
   outline-color: #203e4a;
 }
 
@@ -56,7 +54,7 @@
   font-size: 2.5rem;
   text-transform: uppercase;
   padding: 1rem 3rem;
-  margin: 3rem 0 0;
+  margin: 3rem 0 2rem;
   color: #203e4a;
   font-weight: bold;
   border: 3px solid #203e4a;
@@ -71,42 +69,28 @@
 
 #form__popup {
   margin-top: 3rem;
-  width: 40vw;
+  width: 100%;
   height: auto;
   background-color: white;
   opacity: 0.75;
   border: 1px solid black;
-  box-sizing: border-box;
-}
-
-#form__popup{
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
   font-size: 1.5rem;
-  text-align: center;
-
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
   .tittle3 {
     margin: 1rem;
     text-align: center;
     font-size: 2.5rem;
   }
-  
+
   .form__tittle {
     font-size: 1.5rem;
-  }
-  
-  #form__popup {
-    margin-top: 3rem;
-    width: 90vw;
-    height: auto;
-  }
-  
-  #form__popup{
-    padding: 0.8rem;
-    font-size: 1.25rem;
-  
   }
 
   .form__submit {

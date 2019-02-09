@@ -1,5 +1,6 @@
 let gameOnOrOff = 0;
 
+
 const gameStart = () => {
   let speedLevel = 1;
   let level = 1;
@@ -198,7 +199,7 @@ const gameStart = () => {
       ) {
         score += 1;
         htmlObjects.scoreCounter.textContent = score;
-        getCandyElements()[index].remove();
+        htmlObjects.getCandyElements()[candy.index].remove();
       }
     });
   };
@@ -264,3 +265,4 @@ const gameStart = () => {
   levelDisplay();
   candyPointsCounter();
 };
+

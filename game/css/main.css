@@ -164,9 +164,10 @@ x .topscore > ol {
 }
 
 .background1 .layer3 {
-  background-image: url(_02_trees\and\bushes.png);
+  background-image: url(bushes.png);
   z-index: 3;
   background-position: center;
+  background-size: cover;
 }
 
 .platform {

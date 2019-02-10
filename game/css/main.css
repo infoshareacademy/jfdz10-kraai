@@ -26,7 +26,7 @@ body {
   min-height: 40%;
   z-index: 100;
   margin-top: 10%;
-  display: flex;
+  
 }
 .start-menu {
   position: absolute;

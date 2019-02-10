@@ -1,15 +1,39 @@
 let gameOnOrOff = 0;
+let score;
 let song = new Audio('sounds/happysong.mp3')
+let localScoreKey = 'score';
+let nickField = document.querySelector('#nick');
+let localScoreValue = JSON.parse(localStorage.getItem(localScoreKey)) || [];
+const createScoreTable = () => {
+  let sortedScores = localScoreValue.sort((prev, next) => next.points - prev.points).filter((element, index) => {
+    if (index < 5) {
+      return element
+    }
+  });
+  let scoreTable = document.querySelector('.topscore');
+  let scoresAsOlTable = sortedScores.map(el => `${el.points}      :      ${el.nick}`);
+  if (JSON.parse(localStorage.getItem(localScoreKey))) {
+    scoreTable.innerHTML = `<h1> Najlepsze wyniki</h1>
+    <ol>
+    <li>${scoresAsOlTable[0] || 0}</li>
+    <li>${scoresAsOlTable[1] || 0}</li>
+    <li>${scoresAsOlTable[2] || 0}</li>
+    <li>${scoresAsOlTable[3] || 0}</li>
+    <li>${scoresAsOlTable[4] || 0}</li>
+    </ol>`
+  }
+}
+createScoreTable();
 
 const gameStart = () => {
   song.addEventListener('ended', function () {
     this.currentTime = 0;
     this.play();
   }, false);
-  song.play();
+ 
   let speedLevel = 1;
   let level = 1;
-  let score = 0;
+  score = 0;
   time = 100;
   let carotSound = new Audio('sounds/carot.wav');
   let gameOverSound = new Audio('sounds/angry.wav');
@@ -23,12 +47,14 @@ const gameStart = () => {
     platform4: document.querySelector(".platform4"),
     levelCounter: document.querySelector(".level"),
     scoreCounter: document.querySelector(".score"),
+    scoreDisplay: document.querySelector(".showScore"),
+    musicBox: document.querySelector('#musicBox'),
+    backgroundBox: document.querySelector('#backgroundBox'),
     menu: document.querySelector(".start-menu"),
     background: document.querySelector(".background"),
     backgroundLayer1: document.querySelector(".layer1"),
     backgroundLayer2: document.querySelector(".layer2"),
     backgroundLayer3: document.querySelector(".layer3"),
-    nickField: document.querySelector('#nick'),
     submitScore: document.querySelector('.score-submit '),
     character: document.querySelector(".character"),
     getObstacleElements() {
@@ -74,7 +100,15 @@ const gameStart = () => {
       };
     }
   };
-
+  if(htmlObjects.musicBox.checked){
+    song.play();
+    };
+    if(!htmlObjects.backgroundBox.checked){
+      htmlObjects.backgroundLayer3.classList.add('display-none');
+      htmlObjects.backgroundLayer2.classList.add('display-none');
+      htmlObjects.backgroundLayer1.classList.add('display-none');
+      };
+  
   htmlObjects.scoreCounter.textContent = score;
 
   const gameRestart = () => {
@@ -201,6 +235,7 @@ const gameStart = () => {
   };
 
   const gameOver = () => {
+    htmlObjects.scoreDisplay.textContent = score
     song.pause();
     song.currentTime = 0;
     gameOverSound.play();
@@ -254,12 +289,17 @@ const gameStart = () => {
     }
     levelDisplay();
   };
-  const scoreSubmit = () => {
 
-  }
   obstacleCreator();
   candyCreator(0);
   gameMove();
   levelDisplay();
   candyPointsCounter();
 };
+const scoreSubmit = () => {
+  localScoreValue.push({
+    nick: nickField.value,
+    points: score
+  });
+  localStorage.setItem(localScoreKey, JSON.stringify(localScoreValue));
+}

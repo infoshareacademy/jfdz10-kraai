@@ -12,7 +12,7 @@
 <body>
   <div class="start-menu">
     <div class="instruction">
-      <h1>Random Name Game</h1>
+      <h1>Kraai Game</h1>
       <p>Instrukcja:<br>
         <ul>
           <li>Łap marchewki aby zdobywać punkty.</li>
@@ -21,17 +21,21 @@
         </ul>
       </p>
       <button onclick="gameStart()">ZAGRAJ</button>
+      <form >
+        Muzyka ON/OFF <input type="checkbox" name="" id="musicBox" checked><br>
+        Tło ON/OFF <input type="checkbox" name="" id="backgroundBox" checked>
+      </form>
     </div>
     <div class="topscore">
-      Najlepsze wyniki:
-      <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ol>
+    <h1> Nie ma jeszcze wyników </h1>
     </div>
+  </div>
+  <div class="score-submit display-none">
+    <H1>Zdobyłeś <span class="showScore"></span> punktów</H1>
+    <form>
+      <input type="text" name="" id="nick" placeholder="Podaj swoje imię lub nick"></br>
+      <input type="submit" onclick="scoreSubmit()" value="ZAPISZ">
+    </form>
   </div>
   <div class="viewport">
     <div class="background">
@@ -55,7 +59,6 @@
   <div class="level display-none"></div>
   <script src="js/character.js"></script>
   <script src="js/platform.js"></script>
-  <script src="js/score & candy.js"></script>
 </body>
 
 </html>

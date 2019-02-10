@@ -1,11 +1,42 @@
 let gameOnOrOff = 0;
-
+let score;
+let song = new Audio('sounds/happysong.mp3')
+let localScoreKey = 'score';
+let nickField = document.querySelector('#nick');
+let localScoreValue = JSON.parse(localStorage.getItem(localScoreKey)) || [];
+const createScoreTable = () => {
+  let sortedScores = localScoreValue.sort((prev, next) => next.points - prev.points).filter((element, index) => {
+    if (index < 5) {
+      return element
+    }
+  });
+  let scoreTable = document.querySelector('.topscore');
+  let scoresAsOlTable = sortedScores.map(el => `${el.points}      :      ${el.nick}`);
+  if (JSON.parse(localStorage.getItem(localScoreKey))) {
+    scoreTable.innerHTML = `<h1> Najlepsze wyniki</h1>
+    <ol>
+    <li>${scoresAsOlTable[0] || 0}</li>
+    <li>${scoresAsOlTable[1] || 0}</li>
+    <li>${scoresAsOlTable[2] || 0}</li>
+    <li>${scoresAsOlTable[3] || 0}</li>
+    <li>${scoresAsOlTable[4] || 0}</li>
+    </ol>`
+  }
+}
+createScoreTable();
 
 const gameStart = () => {
+  song.addEventListener('ended', function () {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+ 
   let speedLevel = 1;
   let level = 1;
-  let score = 0;
+  score = 0;
   time = 100;
+  let carotSound = new Audio('sounds/carot.wav');
+  let gameOverSound = new Audio('sounds/angry.wav');
 
   const htmlObjects = {
     viewport: document.querySelector(".viewport"),
@@ -16,11 +47,15 @@ const gameStart = () => {
     platform4: document.querySelector(".platform4"),
     levelCounter: document.querySelector(".level"),
     scoreCounter: document.querySelector(".score"),
+    scoreDisplay: document.querySelector(".showScore"),
+    musicBox: document.querySelector('#musicBox'),
+    backgroundBox: document.querySelector('#backgroundBox'),
     menu: document.querySelector(".start-menu"),
     background: document.querySelector(".background"),
     backgroundLayer1: document.querySelector(".layer1"),
     backgroundLayer2: document.querySelector(".layer2"),
     backgroundLayer3: document.querySelector(".layer3"),
+    submitScore: document.querySelector('.score-submit '),
     character: document.querySelector(".character"),
     getObstacleElements() {
       return document.querySelectorAll(".obstacle");
@@ -54,20 +89,26 @@ const gameStart = () => {
         width: this.character.offsetWidth - 10,
         height: this.character.offsetHeight,
         left: this.character.offsetLeft - this.platform.offsetLeft,
-        right:
-          this.character.offsetLeft +
+        right: this.character.offsetLeft +
           this.character.offsetWidth -
           this.platform.offsetLeft +
           30,
-        top:
-          this.character.offsetTop -
+        top: this.character.offsetTop -
           this.background.offsetHeight +
           this.platform.offsetHeight,
         down: this.character.offsetTop + this.character.offsetHeight
       };
     }
   };
-
+  if(htmlObjects.musicBox.checked){
+    song.play();
+    };
+    if(!htmlObjects.backgroundBox.checked){
+      htmlObjects.backgroundLayer3.classList.add('display-none');
+      htmlObjects.backgroundLayer2.classList.add('display-none');
+      htmlObjects.backgroundLayer1.classList.add('display-none');
+      };
+  
   htmlObjects.scoreCounter.textContent = score;
 
   const gameRestart = () => {
@@ -91,7 +132,6 @@ const gameStart = () => {
     maxDistanceBetweenCandy: 100,
     maxCandySet: 6,
     maxCandyTop: -200,
-    gameSpeed: 5 * speedLevel,
     viewportWidth: htmlObjects.viewport.offsetWidth,
     platformWidth: htmlObjects.platform.offsetWidth,
     isPlatformEnd: false,
@@ -128,9 +168,7 @@ const gameStart = () => {
           gameConfiguration.viewportWidth +
           minimalDistance;
         for (
-          let i = 0;
-          i < Math.random() * gameConfiguration.maxCandySet;
-          i++
+          let i = 0; i < Math.random() * gameConfiguration.maxCandySet; i++
         ) {
           let newCandy = document.createElement("div");
           newCandy.style.left = `${elementLeft}px`;
@@ -158,23 +196,10 @@ const gameStart = () => {
 
   const gameMove = () => {
     const moveInterval = setInterval(() => {
-      htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft -
-        gameConfiguration.gameSpeed()}px`;
-      htmlObjects.backgroundLayer1.style.backgroundPositionX = `${parseFloat(
-        window.getComputedStyle(htmlObjects.backgroundLayer1)
-          .backgroundPositionX
-      ) -
-        gameConfiguration.gameSpeed() / 8}px`;
-      htmlObjects.backgroundLayer2.style.backgroundPositionX = `${parseFloat(
-        window.getComputedStyle(htmlObjects.backgroundLayer2)
-          .backgroundPositionX
-      ) -
-        gameConfiguration.gameSpeed() / 6}px`;
-      htmlObjects.backgroundLayer3.style.backgroundPositionX = `${parseFloat(
-        window.getComputedStyle(htmlObjects.backgroundLayer3)
-          .backgroundPositionX
-      ) -
-        gameConfiguration.gameSpeed() / 4}px`;
+      htmlObjects.platform.style.left = `${htmlObjects.platform.offsetLeft - gameConfiguration.gameSpeed()}px`;
+      htmlObjects.backgroundLayer1.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer1).backgroundPositionX) - gameConfiguration.gameSpeed() /8}px`;
+      htmlObjects.backgroundLayer2.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer2).backgroundPositionX) - gameConfiguration.gameSpeed() /6}px`;
+      htmlObjects.backgroundLayer3.style.backgroundPositionX = `${parseFloat(window.getComputedStyle(htmlObjects.backgroundLayer3).backgroundPositionX) - gameConfiguration.gameSpeed() /4}px`;
       obstacleColision(moveInterval);
       levelUp();
     }, 10);
@@ -197,6 +222,7 @@ const gameStart = () => {
         checkCollisionX(htmlObjects.getCharacterPosition(), candy) &&
         checkCollisionY(htmlObjects.getCharacterPosition(), candy)
       ) {
+        carotSound.play();
         score += 1;
         htmlObjects.scoreCounter.textContent = score;
         htmlObjects.getCandyElements()[candy.index].remove();
@@ -209,11 +235,16 @@ const gameStart = () => {
   };
 
   const gameOver = () => {
+    htmlObjects.scoreDisplay.textContent = score
+    song.pause();
+    song.currentTime = 0;
+    gameOverSound.play();
     gameOnOrOff = 0;
     time = 1000;
     htmlObjects.levelCounter.classList.add("display-none");
     htmlObjects.scoreCounter.classList.add("display-none");
-    htmlObjects.menu.classList.remove("display-none");
+    htmlObjects.submitScore.classList.remove('display-none');
+
   };
 
   const checkCollisionX = (objectX, objectY) => {
@@ -265,4 +296,10 @@ const gameStart = () => {
   levelDisplay();
   candyPointsCounter();
 };
-
+const scoreSubmit = () => {
+  localScoreValue.push({
+    nick: nickField.value,
+    points: score
+  });
+  localStorage.setItem(localScoreKey, JSON.stringify(localScoreValue));
+}

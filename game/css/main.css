@@ -13,7 +13,21 @@ body {
 .display-none {
   display: none !important;
 }
-
+.score-submit{
+  background-color: black;
+  width: 40%;
+  opacity: 0.8;
+  border: #fff solid 5px;
+  border-radius: 25px;
+  padding: 10px;
+  z-index: 200;
+  color: whitesmoke;
+  position: absolute;
+  min-height: 40%;
+  z-index: 100;
+  margin-top: 10%;
+  
+}
 .start-menu {
   position: absolute;
   width: 60%;
@@ -64,7 +78,7 @@ body {
 .background {
   bottom: 100px;
   height: 100vh;
-  width: 10000px;
+  width: 100%;
   position: fixed;
   left: 0;
   background-position: center;
@@ -80,19 +94,22 @@ body {
 }
 
 .background1 .layer1 {
-  background-image: url(layer_01_1920\ x\ 1080.png);
+  background-image: url(_07_huge_clouds.png);
   z-index: 1;
+  background-position: center;
 }
 
 .background1 .layer2 {
-  background-image: url(layer_02_1920\ x\ 1080.png);
+  background-image: url(_05_hill1.png);
   z-index: 2;
+  background-position: center;
 
 }
 
 .background1 .layer3 {
-  background-image: url(layer_03_1920\ x\ 1080.png);
+  background-image: url(_02_trees\ and\ bushes.png);
   z-index: 3;
+  background-position: center;
 
 }
 

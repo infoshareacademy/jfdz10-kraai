@@ -1,6 +1,7 @@
 let isFalling = false;
 let isJumping = false;
 let keyDownCount = 0;
+var jumpSound = new Audio('sounds/jump.wav');
 
 function moveCharacter() {
   const character = document.createElement("div");
@@ -15,7 +16,7 @@ function moveCharacter() {
   function jump(event) {
     if (event.keyCode === keyJump) {
       keyDownCount++;
-      
+      jumpSound.play();
       if (keyDownCount === 1) {
         console.log(keyDownCount);
         character.style.bottom = "250px";

@@ -13,7 +13,21 @@ body {
 .display-none {
   display: none !important;
 }
-
+.score-submit{
+  background-color: black;
+  width: 40%;
+  opacity: 0.8;
+  border: #fff solid 5px;
+  border-radius: 25px;
+  padding: 10px;
+  z-index: 200;
+  color: whitesmoke;
+  position: absolute;
+  min-height: 40%;
+  z-index: 100;
+  margin-top: 10%;
+  display: flex;
+}
 .start-menu {
   position: absolute;
   width: 60%;

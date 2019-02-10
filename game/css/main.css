@@ -4,7 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   display: flex;
-
+  font-family: sans-serif;
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -13,20 +13,47 @@ body {
 .display-none {
   display: none !important;
 }
-.score-submit{
-  background-color: black;
+.score-submit {
+  background-image: url(./14519.jpg);
+  background-size: cover;
+  background-position: center;
   width: 40%;
-  opacity: 0.8;
-  border: #fff solid 5px;
-  border-radius: 25px;
+  box-shadow: 1px 1px 20px 0px #87653c;
   padding: 10px;
   z-index: 200;
-  color: whitesmoke;
+  color: #87653c;
+  text-align: center;
   position: absolute;
   min-height: 40%;
   z-index: 100;
   margin-top: 10%;
-  
+}
+.score-submit > form > input {
+  width: 60%;
+  height: 50px;
+  margin: auto;
+  display: block;
+  border: 2px solid #e1c8a4;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  background-color: #87653c;
+  color: #e1c8a4;
+  transition: 0.3s linear;
+}
+.score-submit > form > input:nth-of-type(2):hover {
+  cursor: pointer;
+  background-color: #e1c8a4;
+  color: #87653c;
+  border-color: #87653c;
+}
+.score-submit > form > input:nth-of-type(1) {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  color: #e1c8a4;
+}
+.score-submit > form > input:nth-of-type(1)::placeholder {
+  color: white;
+  text-align: center;
 }
 .start-menu {
   position: absolute;
@@ -35,34 +62,66 @@ body {
   z-index: 100;
   margin-top: 10%;
   display: flex;
-
 }
-.instruction{
-  background-color: black;
+.instruction {
+  background-image: url(./14519.jpg);
+  background-size: cover;
+  background-position: center;
   width: 40%;
-  opacity: 0.8;
-  border: #fff solid 5px;
-  border-radius: 25px;
+  /* border-bottom: #000 solid 2px;
+  border-top: #000 solid 2px;
+  border-left: #000 solid 2px; */
+  box-shadow: 1px 1px 20px 0px #87653c;
   padding: 10px;
   z-index: 200;
-  color: whitesmoke;
+  color: #87653c;
+  text-align: center;
 }
-.instruction button{
-  width: 80%;
-  height: 100px;
+.instruction button {
+  width: 60%;
+  height: 50px;
   margin: auto;
   display: block;
+  border: 2px solid #e1c8a4;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  background-color: #87653c;
+  color: #e1c8a4;
+  transition: 0.3s linear;
 }
 
-.topscore{
-  background-color: black;
+.instruction button:hover {
+  cursor: pointer;
+  background-color: #e1c8a4;
+  color: #87653c;
+  border-color: #87653c;
+}
+
+.instruction > p {
+  text-align: left;
+}
+.instruction__list {
+  text-align: left;
+}
+.instruction > form {
+  text-align: left;
+  margin: 10px;
+}
+
+.topscore {
+  background-image: url(./14519.jpg);
+  background-size: cover;
+  background-position: center;
   width: 40%;
-  opacity: 0.8;
-  border: #fff solid 5px;
-  border-radius: 25px;
+  /* border: #000 solid 2px; */
   padding: 10px;
   z-index: 200;
-  color: whitesmoke;
+  color: #87653c;
+  box-shadow: 1px 1px 20px 0px #87653c;
+  text-align: center;
+}
+x .topscore > ol {
+  text-align: left;
 }
 
 .viewport {
@@ -90,7 +149,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-
 }
 
 .background1 .layer1 {
@@ -103,14 +161,12 @@ body {
   background-image: url(_05_hill1.png);
   z-index: 2;
   background-position: center;
-
 }
 
 .background1 .layer3 {
-  background-image: url(_02_trees\ and\ bushes.png);
+  background-image: url(_02_trees\and\bushes.png);
   z-index: 3;
   background-position: center;
-
 }
 
 .platform {
@@ -121,29 +177,27 @@ body {
 }
 
 .platform1 {
-  background-image: url('platform01.png');
+  background-image: url("platform01.png");
   width: 20000px;
 }
 
 .platform2 {
-  background-image: url('platrorm02.png');
+  background-image: url("platrorm02.png");
   width: 20000px;
 }
 
 .platform3 {
-  background-image: url('platform3.png');
+  background-image: url("platform3.png");
   width: 20000px;
-
 }
 
 .platform4 {
-  background-image: url('platform01.png');
+  background-image: url("platform01.png");
   width: 20000px;
 }
 
-
 .obstacle {
-  background-image: url('cactus.png');
+  background-image: url("cactus.png");
   bottom: 100px;
   height: 80px;
   width: 59px;
@@ -153,7 +207,7 @@ body {
 .character {
   height: 154px;
   width: 130px;
-  background-image: url('bearbear.png');
+  background-image: url("bearbear.png");
   background-position: center;
   position: fixed;
   bottom: 100px;
@@ -165,30 +219,36 @@ body {
   position: absolute;
   right: 10px;
   top: 10px;
-  width: 100px;
+  width: 150px;
   height: 50px;
-  background-color: #fff;
-  color: black;
-  font-size: 30px;
+  background-color: #87653c;
+  color: #e1c8a4;
+  font-size: 1.5rem;
   text-align: center;
   line-height: 50px;
+  box-shadow: 1px 1px 20px 0px #87653c;
+  text-align: center;
+  border: 2px solid #e1c8a4;
 }
 
 .level {
   position: absolute;
   left: 10px;
   top: 10px;
-  width: 100px;
+  width: 150px;
   height: 50px;
-  background-color: #fff;
-  color: black;
-  font-size: 30px;
+  background-color: #87653c;
+  color: #e1c8a4;
+  border: 2px solid #e1c8a4;
+  font-size: 1.5rem;
   text-align: center;
   line-height: 50px;
+  box-shadow: 1px 1px 20px 0px #87653c;
+  text-align: center;
 }
 
 .candy {
-  background-image: url('carrot.png');
+  background-image: url("carrot.png");
   position: absolute;
   bottom: 120px;
   width: 50px;
